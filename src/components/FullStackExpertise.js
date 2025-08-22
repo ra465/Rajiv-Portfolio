@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './FullStackExpertise.css';
 
-// Icons & features (keep your existing imports and arrays unchanged)...
-
 export default function FullStackExpertise() {
   const [progress, setProgress] = useState(0);
 
@@ -27,11 +25,11 @@ export default function FullStackExpertise() {
       </div>
 
       <div className="container">
-        <h2 className="expertise-title">Full‑Stack Design Expertise</h2>
+        <h2 className="expertise-title">Full-Stack Design Expertise</h2>
 
         <div className="progress-panel">
           <div className="progress-header">
-            <span className="icon">{'<' + '>'}</span>
+            <span className="icon">{"<>"}</span>
             <span className="text">Coding in Progress...</span>
             <span className="percent">{progress}%</span>
           </div>
@@ -60,11 +58,11 @@ export default function FullStackExpertise() {
             </div>
           </div>
           {progress === 100 && (
-            <div className="panel-footer">Project Successfully Completed! 🎉</div>
+            <div className="panel-footer">
+              Project Successfully Completed! 🎉
+            </div>
           )}
         </div>
-
-        {/* Cards & Process sections (unchanged) */}
       </div>
     </section>
   );
