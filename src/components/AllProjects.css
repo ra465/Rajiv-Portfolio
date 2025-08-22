@@ -1,0 +1,184 @@
+.projectCard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.featured-work {
+  position: relative;
+  height: 400px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+}
+
+.featured-work .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.featured-work-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  text-align: center; /* Center text */
+}
+
+.featured-work-content h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.featured-work-content p {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Center the stat cards */
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  width: 150px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  color: #93c5fd;
+  margin: 0 0 5px 0;
+}
+
+.stat-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+.projectCard-card {
+  background: #121212;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.projectCard-card:hover {
+  transform: translateY(-5px);
+}
+
+.projectCard-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.projectCard-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.projectCard-title {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.projectCard-description {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 12px;
+}
+
+.projectCard-techStack {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.projectCard-techItem {
+  background: #1f2937;
+  color: #d1d5db;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.projectCard-buttons {
+  margin-top: auto;
+}
+
+.projectCard-btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  gap: 6px;
+}
+
+.projectCard-btnPrimary i {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .projectCard-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projectCard-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .stats-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .featured-work-content h2 {
+    font-size: 2rem;
+  }
+}
