@@ -63,3 +63,8 @@
   color: #4ade80; /* green */
   font-weight: 600;
 }
+.badge-base {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; /* centers badge horizontally */
+}

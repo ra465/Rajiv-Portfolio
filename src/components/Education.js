@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Education.css";
 
 // Import images from assets
@@ -34,6 +34,20 @@ const educationData = [
 ];
 
 const Education = () => {
+  // Load LinkedIn badge script once
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.linkedin.com/badges/js/profile.js";
+    script.async = true;
+    script.defer = true;
+    script.type = "text/javascript";
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // cleanup when component unmounts
+    };
+  }, []);
+
   return (
     <section className="education-section">
       <h2 className="education-title">🎓 My Education</h2>
@@ -51,6 +65,24 @@ const Education = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* LinkedIn Profile Badge */}
+      <div
+        className="badge-base LI-profile-badge"
+        data-locale="en_US"
+        data-size="medium"
+        data-theme="dark"
+        data-type="VERTICAL"
+        data-vanity="rajivranjan123"
+        data-version="v1"
+      >
+        <a
+          className="badge-base__link LI-simple-link"
+          href="https://in.linkedin.com/in/rajivranjan123?trk=profile-badge"
+        >
+          Rajiv Ranjan
+        </a>
       </div>
     </section>
   );
