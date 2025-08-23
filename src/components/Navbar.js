@@ -25,7 +25,7 @@ const Navbar = () => {
 
         <div className="navbar-right nav-links">
      <a
-  href="https://calendly.com/marc-friedman-web-design--meeting-link/30min"
+  href="https://calendly.com/rajiv23061999/new-meeting"
   className="nav-link"
   target="_blank"
   rel="noopener noreferrer"
