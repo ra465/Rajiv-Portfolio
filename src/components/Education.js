@@ -83,10 +83,16 @@ const Education = () => {
           data-vanity="rajivranjan123"
           data-version="v1"
         >
-          <a
-            className="badge-base__link LI-simple-link"
-            href="https://in.linkedin.com/in/rajivranjan123?trk=profile-badge"
-          />
+         <a
+  className="badge-base__link LI-simple-link"
+  href="https://in.linkedin.com/in/rajivranjan123?trk=profile-badge"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit my LinkedIn profile"
+>
+</a>
+
+
         </div>
       </div>
     </section>
