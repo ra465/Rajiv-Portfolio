@@ -1,70 +1,147 @@
+/* Section */
 .education-section {
-  background: #0d0d0d; /* same as Technologies section */
+  padding: 4rem 2rem;
+  background: #000;;
   color: #fff;
-  padding: 80px 20px;
   text-align: center;
 }
 
 .education-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-.education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+/* Timeline layout */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.education-card {
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #1a1a1a;;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+/* Timeline items */
+.timeline-item {
+  padding: 1.5rem 2rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item .timeline-icon {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: #1c2431;
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 20px;
-  width: 80%;
-  max-width: 700px;
-  text-align: left;
+  z-index: 1;
+}
+
+.timeline-item.right .timeline-icon {
+  left: -30px;
+}
+
+.timeline-item .timeline-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  padding: 1.5rem;
+  background:#1a1a1a;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.education-card:hover {
+.timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
-.edu-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.edu-content h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.edu-content p {
-  margin: 4px 0;
-  color: #ccc;
-}
-
-.edu-year {
-  color: #58a6ff;
+.timeline-year {
   font-weight: bold;
+  color: #fff;
+  font-size: 1.1rem;
 }
 
 .edu-status {
-  color: #4ade80; /* green */
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* LinkedIn Section */
+.linkedin-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.linkedin-title {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
-.badge-base {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center; /* centers badge horizontally */
+
+.linkedin-section .badge-base {
+  background: #1a1a1a;;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin-section .badge-base:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item .timeline-icon {
+    left: 0;
+    right: auto;
+  }
 }

@@ -1,64 +1,89 @@
 .expert-help {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  background-color: #121212;
+  justify-content: space-between;
+  padding: 80px 20px;
+  gap: 40px;
+  background-color: #0f0f0f;
   color: #fff;
-  border-radius: 10px;
-  padding: 2rem;
-  margin-top: 4rem;
-  gap: 2rem;
 }
 
 .expert-content {
-  flex: 1 1 400px;
+  flex: 1;
+  max-width: 600px;
 }
 
-.expert-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.expert-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-.expert-content p {
-  margin-bottom: 1rem;
-  color: #bbb;
+.expert-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
 }
 
 .expert-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0 0 30px 0;
 }
 
 .expert-list li {
-  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #ddd;
 }
 
-.expert-image {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
+.expert-list li::before {
+  content: "➔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  color: #fff;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transform: translateY(-2px);
 }
 
 .expert-image img {
-  width: 100%;
   max-width: 450px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.transform-website-cta {
-  text-align: center;
-  margin: 4rem 0 2rem;
-}
+@media (max-width: 900px) {
+  .expert-help {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.transform-website-cta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
+  .expert-content {
+    max-width: 100%;
+  }
 
-.transform-website-cta p {
-  color: #bbb;
-  margin-bottom: 1.5rem;
+  .expert-list li {
+    text-align: left;
+  }
 }

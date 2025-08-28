@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaLinkedin } from 'react-icons/fa';
 import './ClientSuccessStories.css';
 
-// ✅ Import local avatar images
+// Import avatars
 import royimazor from '../assets/h1.jpg';
 import omarturner from '../assets/h2.jpg';
 import bradleythompson from '../assets/h3.jpg';
@@ -12,7 +13,6 @@ import emilybrown from '../assets/h6.jpg';
 import danielsmith from '../assets/h7.jpg';
 import avamiller from '../assets/h8.jpg';
 
-// ✅ Testimonials Array
 const testimonials = [
   {
     id: 1,
@@ -21,16 +21,18 @@ const testimonials = [
     company: 'A Secure Annapolis Locksmith',
     avatar: royimazor,
     rating: 5,
-    quote: 'Very professional wonderful customer service, thank you Rajiv Ranjan for all the work you put in, will definitely be using for future projects!',
+    quote:
+      'Very professional wonderful customer service, thank you Rajiv Ranjan for all the work you put in, will definitely be using for future projects!',
   },
   {
     id: 2,
     name: 'Omar Turner',
-    role: 'Chief Executive Officer',
+    role: 'CEO',
     company: 'Binns Media Group, New York',
     avatar: omarturner,
     rating: 5,
-    quote: "Rajiv Ranjan was able to execute the vision perfectly! He's big on communication and easy to speak with. Highly recommend Rajiv Ranjan's services.",
+    quote:
+      "Rajiv Ranjan was able to execute the vision perfectly! He's big on communication and easy to speak with. Highly recommend Rajiv's services.",
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const testimonials = [
     company: '',
     avatar: bradleythompson,
     rating: 5,
-    quote: "Rajiv Ranjan's expertise in web development is truly exceptional. Delivered a website that looks stunning and performs flawlessly.",
+    quote:
+      "Rajiv Ranjan's expertise in web development is truly exceptional. Delivered a website that looks stunning and performs flawlessly.",
   },
   {
     id: 4,
@@ -48,7 +51,8 @@ const testimonials = [
     company: 'Green Media Co.',
     avatar: sophiagreen,
     rating: 5,
-    quote: 'Working with Rajiv Ranjan was an absolute pleasure. His attention to detail is unmatched.',
+    quote:
+      'Working with Rajiv Ranjan was an absolute pleasure. His attention to detail is unmatched.',
   },
   {
     id: 5,
@@ -57,7 +61,8 @@ const testimonials = [
     company: 'Innovatech Solutions',
     avatar: liamjohnson,
     rating: 5,
-    quote: 'Rajiv Ranjan transformed our outdated website into a high-performing platform. Could not be happier.',
+    quote:
+      'Rajiv Ranjan transformed our outdated website into a high-performing platform. Could not be happier.',
   },
   {
     id: 6,
@@ -66,7 +71,8 @@ const testimonials = [
     company: 'Brown Consulting',
     avatar: emilybrown,
     rating: 5,
-    quote: 'Professional, reliable, and results-driven. Highly recommend his services.',
+    quote:
+      'Professional, reliable, and results-driven. Highly recommend his services.',
   },
   {
     id: 7,
@@ -75,7 +81,8 @@ const testimonials = [
     company: 'NextGen Creatives',
     avatar: danielsmith,
     rating: 5,
-    quote: 'Rajiv Ranjan is a true expert. From design to deployment, flawless execution.',
+    quote:
+      'Rajiv Ranjan is a true expert. From design to deployment, flawless execution.',
   },
   {
     id: 8,
@@ -103,14 +110,15 @@ export default function ClientSuccessStories() {
       <div className="container">
         <header className="section-header">
           <h2 className="section-title">
-            <span>Client</span> <span>Success</span> <span>Stories</span>
+            <span>Client</span> <span className="highlight">Success</span> Stories
           </h2>
           <p className="section-subtitle">
-            Real results from real clients. See how we’ve helped businesses transform their digital presence and achieve measurable growth.
+            Real results from real clients. See how we’ve helped businesses transform their
+            digital presence and achieve measurable growth.
           </p>
         </header>
 
-        <section className="testimonials-grid">
+        <div className="testimonials-grid">
           {testimonials.slice(0, visibleCount).map((t) => (
             <article key={t.id} className="testimonial-card">
               <header className="testimonial-header">
@@ -120,27 +128,26 @@ export default function ClientSuccessStories() {
                 <div className="testimonial-info">
                   <h4>{t.name}</h4>
                   <p className="testimonial-role">
-                    {t.role}{t.company && `, ${t.company}`}
+                    {t.role}
+                    {t.company && `, ${t.company}`}
                   </p>
-                  <div className="testimonial-rating">
-                    {'★'.repeat(t.rating)}
-                  </div>
+                  <div className="testimonial-rating">{'★'.repeat(t.rating)}</div>
                 </div>
                 <a
-                  href={`https://www.linkedin.com/search/results/all/?keywords=${encodeURIComponent(t.name)}`}
+                  href={`https://www.linkedin.com/search/results/all/?keywords=${encodeURIComponent(
+                    t.name
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="linkedin-button"
+                  className="linkedin-btn"
                 >
-                  Connect
+                  <FaLinkedin />
                 </a>
               </header>
-              <blockquote className="testimonial-quote">
-                {t.quote}
-              </blockquote>
+              <blockquote className="testimonial-quote">“{t.quote}”</blockquote>
             </article>
           ))}
-        </section>
+        </div>
 
         <div className="show-more-container">
           <button className="show-more-btn" onClick={handleToggle}>
@@ -152,8 +159,12 @@ export default function ClientSuccessStories() {
           <p className="cta-text">Ready to join our satisfied clients?</p>
           <div className="cta-buttons">
             <button className="primary-btn">Start Your Project</button>
-            <Link to="/projects" className="secondary-btn">View Our Work</Link>
-            <Link to="/website-analysis" className="secondary-btn">Free Website Analysis</Link>
+            <Link to="/projects" className="secondary-btn">
+              View Our Work
+            </Link>
+            <Link to="/website-analysis" className="secondary-btn">
+              Free Website Analysis
+            </Link>
           </div>
         </div>
       </div>
